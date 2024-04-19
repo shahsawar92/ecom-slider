@@ -1,0 +1,105 @@
+body {
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  overflow: hidden;
+  height: 100vh;
+}
+
+.swiper-vertical > .swiper-wrapper > .swiper-slide-next {
+  /* margin-bottom: -6%;
+  margin-top: 5%;
+  transition: margin-bottom 0.5s ease-out; */
+  top: 100%;
+}
+
+.swiper-vertical > .swiper-wrapper > .swiper-slide-prev {
+  /* margin-top: -7%;
+  margin-bottom: 4%;
+  transition: margin-top 0.5s ease-out, margin-bottom 0.5s ease-out; */
+  top: 100%;
+}
+
+.swiper-vertical .swiper-slide {
+  text-align: center;
+  height: 100% !important;
+  margin: 5px;
+}
+
+.mySwiper2 > .swiper-wrapper > .swiper-slide:not(.swiper-slide-active) {
+  transform: scale(0.8);
+  transition: ease-in 0.1s;
+  /* height: 30vh; */
+}
+
+/* cat nex prev */
+.mySwiper2 > .swiper-wrapper > .swiper-slide-prev {
+}
+
+.mySwiper2 > .swiper-wrapper > .swiper-slide-next {
+}
+
+/* non active of products */
+.mySwiper2
+  > .swiper-wrapper
+  > .swiper-slide-active
+  .mySwiper
+  > .swiper-wrapper
+  > .swiper-slide:not(.swiper-slide-active) {
+  opacity: 0.7;
+  transform: scale(0.7);
+  transition: ease-in 0s;
+}
+/* active product of active slider */
+.mySwiper2
+  > .swiper-wrapper
+  > .swiper-slide-active
+  .mySwiper
+  .swiper-slide-active {
+  opacity: 1;
+  transform: scale(1.1);
+  width: 69vw;
+}
+
+.mySwiper > .swiper-wrapper > .swiper-slide-prev {
+  left: -10%;
+}
+
+.mySwiper > .swiper-wrapper > .swiper-slide-next {
+  right: -10%;
+}
+/* active product of top or bottom slider */
+.mySwiper2
+  .swiper-slide:not(.swiper-slide-active)
+  .mySwiper
+  .swiper-slide-active {
+  opacity: 0.7;
+  font-size: 10px;
+}
+
+.imageStyle {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 5%;
+  margin: 0 auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .imageStyle {
+    width: 120px;
+    height: 120px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+  .mySwiper > .swiper-wrapper > .swiper-slide-prev {
+    left: -10%;
+  }
+
+  .mySwiper > .swiper-wrapper > .swiper-slide-next {
+    right: 3%;
+  }
+}
