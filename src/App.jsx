@@ -5,6 +5,7 @@ import "swiper/css/pagination";
 import "./styles.css";
 import assets from "./assets/assets";
 import Products from "./products";
+import SingleCat from "./singleCat";
 
 export default function App() {
   const [activeSlide, setActiveSlide] = useState(0);
@@ -33,6 +34,10 @@ export default function App() {
     {
       name: "tech 3",
       image: assets.tech2,
+    },
+    {
+      name: "tech 4",
+      image: assets.tech1,
     },
   ];
 
@@ -99,22 +104,60 @@ export default function App() {
         slidesPerView={3}
         loop={true}
         initialSlide={2}
+        onAnimationStart={(swiper) => {
+          swiper.params.speed = 3000;
+          swiper.update();
+        }}
+        slideToClickedSlide={true}
         pagination={{
           clickable: false,
         }}
         centeredSlides={true}
+        effect={"fade"}
+        fadeEffect={{ crossFade: true }}
         onSlideChange={handleSlideChange}>
         <SwiperSlide>
-          <Products index={0} activeSlide={activeSlide} assets={dec} />
+          {/* <img className='imageStyle' src={assets.m} /> */}
+          <SingleCat assets={masks} index={0} activeSlide={activeSlide} />
         </SwiperSlide>
         <SwiperSlide>
-          <Products index={1} activeSlide={activeSlide} assets={masks} />
+          {/* <img className='imageStyle' src={assets.a} /> */}
+          <SingleCat assets={dec} index={1} activeSlide={activeSlide} />
         </SwiperSlide>
         <SwiperSlide>
-          <Products index={2} activeSlide={activeSlide} assets={tshirts} />
+          {/* <img className='imageStyle' src={assets.d} /> */}
+          {/* <Products index={2} activeSlide={activeSlide} assets={tshirts} /> */}
+          <SingleCat assets={tshirts} index={2} activeSlide={activeSlide} />
+          {/* <Swiper
+            className='mySwiper swiper-h'
+            spaceBetween={0}
+            allowSlideNext={true}
+            allowSlidePrev={true}
+            slidesPerView={3}
+            centeredSlides={true}
+            loop={true}
+            // onSlideChange={(swiper) => handleSlideChange(swiper)}
+            pagination={{
+              clickable: false,
+            }}>
+            <SwiperSlide>
+              <img className='imageStyle' src={assets.a} alt='' />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className='imageStyle' src={assets.a1} alt='' />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className='imageStyle' src={assets.a2} alt='' />
+            </SwiperSlide>
+            <SwiperSlide>
+              <img className='imageStyle' src={assets.a3} alt='' />
+            </SwiperSlide>
+          </Swiper> */}
         </SwiperSlide>
         <SwiperSlide>
-          <Products index={3} activeSlide={activeSlide} assets={tech} />
+        {/* <img className='imageStyle' src={assets.tech} alt='' /> */}
+        <SingleCat assets={tech} index={3} activeSlide={activeSlide} />
+        {/* <Products index={3} activeSlide={activeSlide} assets={tech} /> */}
         </SwiperSlide>
       </Swiper>
     </>
